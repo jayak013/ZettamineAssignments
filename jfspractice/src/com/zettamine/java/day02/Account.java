@@ -17,11 +17,15 @@ public abstract class Account {
 
 	
 	public double Deposit(double depAmount) {
-		return amount + depAmount;
+		double totalBalance = amount + depAmount;
+		this.amount = totalBalance;
+		return totalBalance;
 		
 	}
 	public double withdraw(double withAmount) {
-		return amount - withAmount;
+		double totalBalance = amount - withAmount;
+		this.amount = totalBalance;
+		return totalBalance;
 	}
 	public String details() {
 		return "A/C NO: "+ acNo + " | NAME: "+name+" | BALANCE: "+amount+"/-";

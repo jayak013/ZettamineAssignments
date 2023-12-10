@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class ManageHosteller {
 	
+	static Scanner scn = new Scanner(System.in);
+	
 	public static void main(String[] args) {
-		Scanner scn = new Scanner(System.in);
 		Studentt s = new Hosteller();
 		System.out.println("Enter the Student Details & Hostel Details: ");
 		System.out.print("Student ID: ");
@@ -19,15 +20,23 @@ public class ManageHosteller {
 		s.setGender(scn.next());
 		System.out.print("Phone Number: ");
 		String mobile = scn.next();
+		s.setPhoneNumber(mobile);
 		while(!ValidateMobileNumber.validateMobile(mobile)) {
 			System.out.print("Please enter a Valid Mobile Number: ");
-			s.setPhoneNumber(mobile=scn.next());
+			mobile=scn.next();
+			s.setPhoneNumber(mobile);
 		}
 		scn.nextLine();
 		System.out.print("Hostel Name: ");
 		((Hosteller)s).setHostelName(scn.nextLine());
 		System.out.print("Room Number: ");
 		((Hosteller)s).setRoomNumber(scn.nextInt());
+		
+		getHostellerDetails(s);
+	}
+	
+	private static Hosteller getHostellerDetails(Studentt s) {
+		String mobile = s.getPhoneNumber();
 		System.out.print("Modify Room Number(Y/N): ");
 		char confirm1 = scn.next().charAt(0);
 		if(confirm1=='y'||confirm1=='Y') {
@@ -40,15 +49,13 @@ public class ManageHosteller {
 		if(confirm2=='Y'||confirm2=='y') {
 			System.out.print("New Phone Number: ");
 			mobile = scn.next();
+			s.setPhoneNumber(mobile);
 			while(!ValidateMobileNumber.validateMobile(mobile)) {
 				System.out.print("Please enter a Valid Mobile Number: ");
-				s.setPhoneNumber(mobile=scn.next());
+				mobile=scn.next();
+				s.setPhoneNumber(mobile);
 			}
 		}
-		printHostellerDetails(s);
-	}
-	
-	private static void printHostellerDetails(Studentt s) {
 		System.out.println("Student ID: "+s.getStudentId());
 		System.out.println("Student Name: "+s.getName());
 		System.out.println("Department ID: "+s.getDepartmentId());
@@ -56,6 +63,7 @@ public class ManageHosteller {
 		System.out.println("Student Phone No: "+s.getPhoneNumber());
 		System.out.println("Hostel Name: "+((Hosteller)s).getHostelName());
 		System.out.println("Room No: "+((Hosteller)s).getRoomNumber());
+		return ((Hosteller)s);
 	}
 	
 }

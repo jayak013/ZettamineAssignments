@@ -63,7 +63,6 @@ public class BankApp {
 							}
 							double totalAmount = acc.Deposit(depositedAmount);
 							System.out.println("DepositedAmount : "+depositedAmount+"/-\nTotal Balance : "+totalAmount+"/-");
-							acc.setAmount(totalAmount);
 						}
 						break;
 					case 3:
@@ -82,7 +81,6 @@ public class BankApp {
 							}
 							double totalAmount = acc.withdraw(withDrawAmount);
 							System.out.println("Withdrawn Amount : "+withDrawAmount+"/-\nTotal Balance : "+totalAmount+"/-");
-							acc.setAmount(totalAmount);
 						}
 						break;
 					case 4:

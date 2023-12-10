@@ -1,5 +1,8 @@
 package com.zettamine.java.day03;
 
+
+
+
 public class Hosteller extends Studentt{
 	private String hostelName;
 	private int roomNumber;
