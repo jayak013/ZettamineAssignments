@@ -7,16 +7,17 @@ import java.util.Set;
 public class UniqueWords {
 	static Scanner scn = new Scanner(System.in);
 	public static void main(String[] args) {
-		int uniqueWordsCount = uniqueWordsCount("Hello Everybody, welcome to collection in JAVA. Collection,is like a container and powerful concept in Java!");
+		//int uniqueWordsCount = uniqueWordsCount("Hello Everybody, welcome to collection in JAVA. Collection,is like a container and powerful concept in Java!");
+		//Example
 		System.out.print("Enter the sentence/para to get unique words: ");
 		String sentence = scn.nextLine();
-		System.out.println(uniqueWordsCount);
-		System.out.println(uniqueWordsCount(sentence));
+		System.out.println("Total number of unique words in the sentence: "+uniqueWordsCount(sentence));
 	}
 	
 	private static int uniqueWordsCount(String words) {
 		Set<String> set = new LinkedHashSet<String>();
 		String[] split = words.split("[^a-zA-Z]+");
+		System.out.println("Total number of words in the sentence: "+split.length);
 		for(String word:split) set.add(word.toLowerCase());
 		return set.size();
 	}
