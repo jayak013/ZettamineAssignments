@@ -6,8 +6,8 @@ import java.io.IOException;
 public class RenameFile {
 	
 	public static void main(String[] args) throws IOException {
-		File f = new File("C:/CJava/java/java.txt");
-		File rename = new File("C:/CJava/java/renamedjava.txt");
+		File f = new File("C:/CJava/java/renamedjava.txt");
+		File rename = new File("C:/CJava/java/java.txt");
 		if(f.exists()) {
 			f.renameTo(rename);
 			System.out.println("successfully renamed");
